@@ -161,8 +161,6 @@ def get_text_cipher(text):
 
 ####
 
-ignore_list = [",", ".", "?", "!" ,"\"" ,"\'", ":" ,"\t", "\n", " ", "(", ")", "-", ";"]
-
 plain_text = open('moby_dick.txt').read().lower()
 
 alphabetStr = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
@@ -171,6 +169,18 @@ alphabet = alphabetStr.split(" ")
 tupleList = dict(zip(alphabet, sample(alphabet,len(alphabet))))
 
 text_as_array = stringAsArray(plain_text)
+
+ignore_list = [",", ".", "?", "!" ,"\"" ,"\'", ":" ,"\t", "\n", "\x08", " ", "(", ")", "-", ";", "'", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "&", "[", "]"]
+
+'''
+for letter in  plain_text:
+    if not letter in alphabet:
+        if not letter in ignore_list:
+            ignore_list.appen(letter)
+
+print(ignore_list)
+'''
+
 cipher_text = get_text_cipher(text_as_array)
 
 #print(compareTwoTexts(plain_text, cipher_text, ignore_list))
@@ -189,9 +199,11 @@ cipher_frequency = giveSortedFrequencyList(cipher_text, ignore_list)
 #
 analysisKey = ["e", "t", "a", "o", "i", "n", "s", "r", "h", "l", "d", "c", "u", "m", "f", "p", "g", "w", "y", "b", "v", "k", "x", "j" , "q", "z" ]
 
+#heuristic_word_dict = getWordDictionary("words.shortened.txt")
+#heuristic_word_dict = getWordDictionary("words_english.txt")
 #heuristic_word_dict = getWordDictionary("words.en.txt")
-heuristic_word_dict = getWordDictionary("words_english.txt")
-#print(heuristic_word_dict)
+heuristic_word_dict = getWordDictionary("big_dic.txt")
+print(heuristic_word_dict)
 
 #print(compareTwoTexts(plain_text, text, ignore_list))
 
@@ -199,97 +211,94 @@ words = splitIntoWordsAndMarks(cipher_text, ignore_list)
 
 #print(words)
 
-print(heuristic_word_dict[get_pattern("hello")])
+#print(heuristic_word_dict[get_pattern("hello")])
 
-failRatio = 100
-new_word_array = []
-word_length = len(words)
-analysed_words = words
+def intersect(a, b):
+    if len(b) == 0:
+        return a
+    return list(set(a) & set(b))
 
-reversed_cipher = list(reversed(cipher_frequency))
-#print(reversed_cipher)
-cipher_tuples                                                                                                                                                                                                                                           = []
+def initialize_cipher_mapping(alphabet):
+    mapping_dict = {}
+    for letter in alphabet:
+        mapping_dict[letter] = []
+    return mapping_dict
 
-i = 0
-while i < len(reversed_cipher):
-    tuple = reversed_cipher[i]
-    new_tuple = ( analysisKey[i], tuple)
-    cipher_tuples.append(new_tuple)
-    i += 1
+def intersect_mapping(old_mapping, heuristic_word_dict, word_pattern, ciphered_word):
+    current_mapping = initialize_cipher_mapping(analysisKey)
+    candidates = []
+    print("old mapping: " + str(old_mapping))
+    try:
+       candidates = heuristic_word_dict[word_pattern]
+    except KeyError:
+        print("error occured")
+        return old_mapping
 
-print(cipher_tuples)
+    for cipher_letter in ciphered_word:
+        index = ciphered_word.index(cipher_letter)
+        for candidate in candidates:
+            #print(candidate)
+            potential_letter = candidate[index]
+            if not potential_letter in ignore_list:
+                if not potential_letter in current_mapping[cipher_letter]:
+                    #print("potential letter to add: " + potential_letter + " word: " + candidate)
+                    current_mapping[cipher_letter].append(potential_letter)
 
+    print("analyzed ciphered letters: " + str(current_mapping))
 
-def reku(machted_words, not_matched_words, all_words, used_keys, unused_keys, old_fail_ratio, wanted_fail_ratio, ignore_list, heuristic_word_dict):
-    if old_fail_ratio <= wanted_fail_ratio:
-        print(matched_words)
-        return matched_words
+    is_first = True
+    for key,value in old_mapping.iteritems():
+        if len(value) > 0:
+            print("this isn't the first round: " + str(value))
+            is_first = False
+            break;
 
-    matched_words = []
-    not_matched_words = []
+    if is_first:
+        print("return the current mapping: " + str(current_mapping) + " because its the first time")
+        return current_mapping
 
-    key = unused_keys.pop(0)
-
-    prediction_keys = copy.copy(used_keys)
-    prediction_keys.append(key)
-
-#    print("predict keys: " + str(prediction_keys))
-
-    for word in all_words:
-        #        print("current word: " + word)
-        if word in ignore_list:
-            #matched_words.append(word)
-            continue
-        #print("predict keys in for: " + str(prediction_keys))
-        prediction_word = match_word(prediction_keys, word, heuristic_word_dict)
-        if len(prediction_word) > 0:
-            #print("FOUND MATCHING WORD: " + prediction_word)
-            matched_words.append(prediction_word)
+    #intersect both mappings
+    print("intersecting mappings")
+    temp_mapping = initialize_cipher_mapping(analysisKey)
+    for key, value in old_mapping.iteritems():
+        cur_val = current_mapping[key]
+        print("length of value: " + str(len(value)))
+        if len(value) == 0:
+            print("key: " + str(key) + " | current value: " + str(cur_val))
+            temp_mapping[key] = cur_val
+            print(temp_mapping[key])
         else:
-            not_matched_words.append(prediction_word)
+            print("key: " + str(key) + " | value: " + str(value))
+            print("current mapping: " + str(current_mapping[key]))
+            temp_mapping[key] = intersect(value, current_mapping[key])
+            print("temp mapping: " + str(temp_mapping[key]))
+    return temp_mapping
 
-    new_fail_ratio = float(len(not_matched_words)) / float(len(all_words)) * 100
-    print("current fail ratio: " + str(new_fail_ratio))
-    print(unused_keys)
-    if new_fail_ratio < old_fail_ratio:
-        used_keys.append(key)
-        reku(machted_words, not_matched_words, all_words, used_keys, unused_keys, new_fail_ratio, wanted_fail_ratio, ignore_list, heuristic_word_dict)
+
+cipher_mapping = initialize_cipher_mapping(analysisKey)
+
+count = 0
+
+for word in words:
+    print("current word: " + word)
+    if not word in ignore_list:
+        word_pattern = get_pattern(word)
+        print("word : " + word + " | pattern: " + word_pattern)
+        print("count: " + str(count))
+        cipher_mapping = intersect_mapping(cipher_mapping, heuristic_word_dict, word_pattern, word)
+        print("latest ciphers: " + str(cipher_mapping))
+    count += 1
+print(cipher_mapping)
+
+deciphered_text = ""
+
+for letter in cipher_text:
+    if not letter in ignore_list:
+        if len(cipher_mapping[letter]) > 0:
+            deciphered_text = deciphered_text + cipher_mapping[letter][0]
+        else:
+            deciphered_text = deciphered_text + letter
     else:
-        unused_keys.append(key)
-        unused_keys = sample(unused_keys, len(unused_keys))
-        reku(machted_words, not_matched_words, all_words, used_keys, unused_keys, new_fail_ratio, wanted_fail_ratio, ignore_list, heuristic_word_dict)
+        deciphered_text = deciphered_text + letter
 
-#reku([], [], words, cipher_tuples[:3], cipher_tuples[3:], failRatio, 50, ignore_list, heuristic_word_dict)
-
-'''
-while failRatio > 60:
-    randomKeys = heuristic_part + sample(random_part,len(random_part))
-    rkeys = cipher_heuristic_part + sample(cipher_random_part, len(cipher_random_part))
-    
-    analysisKeys = dict(zip(rkeys, randomKeys))
-    #print(analysisKeys)
-    
-    analysed_words = splitIntoWordsAndMarks(cipher_text, ignore_list)
-    not_matched_words = []
-    machted_words = []
-    
-    i = 0
-    while i < word_length:
-        currentWord = analysed_words[0];
-        if currentWord in ignore_list:
-            # if the word is a marker or smth like this, just add it to our new array
-            machted_words.append(analysed_words.pop(0))
-        else:
-            match = match_word(analysisKeys, currentWord, heuristic_word_dict)
-            if len(match) > 0:
-                machted_words.append(analysed_words.pop(0))
-            else:
-                not_matched_words.append(analysed_words.pop(0))
-        i += 1
-#print(machted_words)
-    print(len(not_matched_words))
-    failRatio = round(float(len(not_matched_words)) / float(word_length) * 100, 0)
-    print(failRatio)
-#    print(not_matched_words)
-#   failRatio = 4
-'''
+print(deciphered_text)
