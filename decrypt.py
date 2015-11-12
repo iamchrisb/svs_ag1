@@ -314,7 +314,7 @@ def get_closest_word(word, candidates):
     candidate = word
 
     for possible_candidate in candidates:
-        if is_matching(word, possible_candidate, 0.6):
+        if is_matching(word, possible_candidate, 0.49):
             return possible_candidate
 
     return candidate
