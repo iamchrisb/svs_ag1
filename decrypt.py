@@ -2,7 +2,7 @@
 #!../svs-vm/Scripts/python
 from random import shuffle
 import copy
-import pprint
+import pprint, json
 from random import sample
 from collections import OrderedDict
 
@@ -172,19 +172,7 @@ text_as_array = stringAsArray(plain_text)
 
 ignore_list = [",", ".", "?", "!" ,"\"" ,"\'", ":" ,"\t", "\n", "\x08", " ", "(", ")", "-", ";", "'", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "&", "[", "]"]
 
-'''
-for letter in  plain_text:
-    if not letter in alphabet:
-        if not letter in ignore_list:
-            ignore_list.appen(letter)
-
-print(ignore_list)
-'''
-
 cipher_text = get_text_cipher(text_as_array)
-
-#print(compareTwoTexts(plain_text, cipher_text, ignore_list))
-
 
 ######
 ##
@@ -192,18 +180,17 @@ cipher_text = get_text_cipher(text_as_array)
 ##
 ######
 
-cipher_frequency = giveSortedFrequencyList(cipher_text, ignore_list)
+#cipher_frequency = giveSortedFrequencyList(cipher_text, ignore_list)
 
 #
 # heuristic ordering
 #
 analysisKey = ["e", "t", "a", "o", "i", "n", "s", "r", "h", "l", "d", "c", "u", "m", "f", "p", "g", "w", "y", "b", "v", "k", "x", "j" , "q", "z" ]
 
-#heuristic_word_dict = getWordDictionary("words.shortened.txt")
-#heuristic_word_dict = getWordDictionary("words_english.txt")
-#heuristic_word_dict = getWordDictionary("words.en.txt")
 heuristic_word_dict = getWordDictionary("big_dic.txt")
-print(heuristic_word_dict)
+
+with open('heuristic_pattern.dict.json', 'w') as fp:
+    json.dump(heuristic_word_dict, fp)
 
 #print(compareTwoTexts(plain_text, text, ignore_list))
 
@@ -288,7 +275,8 @@ for word in words:
         cipher_mapping = intersect_mapping(cipher_mapping, heuristic_word_dict, word_pattern, word)
         print("latest ciphers: " + str(cipher_mapping))
     count += 1
-print(cipher_mapping)
+
+#print(cipher_mapping)
 
 deciphered_text = ""
 
@@ -302,3 +290,52 @@ for letter in cipher_text:
         deciphered_text = deciphered_text + letter
 
 print(deciphered_text)
+
+def is_matching(word, candidate, success_rate):
+    correct = 0
+    print(word)
+    print(candidate)
+    for x in xrange(len(word)):
+        print("letter word: " + word[x])
+        print("letter candidate: " + candidate[x])
+        if word[x] == candidate[x]:
+            correct += 1
+    if correct == 0:
+        return False
+    rate =  float(correct) / float(len(word))
+    print(rate)
+    return rate >= success_rate
+
+
+def get_closest_word(word, candidates):
+    if word in candidates:
+        return word
+
+    candidate = word
+
+    for possible_candidate in candidates:
+        if is_matching(word, possible_candidate, 0.6):
+            return possible_candidate
+
+    return candidate
+
+#words = splitIntoWordsAndMarks(cipher_text, ignore_list)
+latest_words = splitIntoWordsAndMarks(deciphered_text, ignore_list)
+
+mostly_used_words_dict = getWordDictionary("words_english.txt")
+
+deciphered_last_version = ""
+for y in xrange(len(words)):
+    latest_word = latest_words[y]
+    word = words[y]
+    print(words[y])
+    print(latest_word)
+    if not latest_word in ignore_list:
+        pattern = get_pattern(word)
+        print(pattern)
+        if pattern in mostly_used_words_dict:
+            candidates = mostly_used_words_dict[pattern]
+            word = get_closest_word(latest_words[y], candidates)
+    deciphered_last_version = deciphered_last_version + word + " "
+
+print(deciphered_last_version)
