@@ -1,0 +1,843 @@
+Jedi Guardian:
+
+The Jedi Guardian is similar to Kotor I's Jedi Guardian. You get the force
+jump and it's primary focus is on combat. The class skills you get are 
+awareness, demolitions, persuade, and treat injury.
+
+Jedi Sentinal:
+
+The Jedi Sentinal is also similar to the one we had in Kotor I. You are imune
+to fear and critical hits. Class skills are awareness, computer use, persuade,
+security, stealth, and treat injury.
+
+Jedi Consular:
+
+The Jedi Consular is similar as we saw in Kotor I. You get the most force 
+points per level and there are times where you will get 2 force powers when you
+level up.
+
+The absolute best way to play the game is with a Jedi Sentinal. The Sentinal
+gets the most skill points, the most class skills, and the inability to be 
+stunned or paralyzed. Skills in Kotor II are very, very important. You use the
+skills you have to create items on a workbench. The higher your skill, the 
+better item you can make. Of course, you can use your party members to create
+items for you if their skill is higher. It is much easier and much better to 
+have the skills you need yourself. More skill = more xp = more times leveling
+up. The game does not have a level cap at 20 (yay!) so you can continue 
+leveling up your character to your hearts content. The earlier in the game you
+invest in skills the easier it will be to build other areas of your character.
+In addition, having skills needed to complete a task can also give you a bonus
+to one of your attributes.
+
+Of course, I will guide those who want to be Jedi Guardians and Consulars. You
+won't pass all the skill checks, but you will still be able to complete the 
+game.
+
+The only time gender matters is with someone who joins you. Handmaiden joins if
+you are male and Deciple joins if you are female. Beyond that it doesn't make
+any difference at all.
+
+B.  Portrait
+
+You just select what you want your character to look like. Not very important.
+
+C.  Attributes:
+
+After selecting what you want your character to look like, you will be taken to
+the atributes screen. There are six attributes total.
+
+Strength:
+
+Strength determins how well you are able to attack an enemy with swords or a 
+lightsaber.
+
+Dexterity:
+
+Dexterity determines how well you can dodge attacks. For people who use range
+weapons it also determines how well you can hit with them.
+
+Constitution:
+
+Constitution determines your health. It also is involved in what types of 
+implants you can get. The implant requirements involve your actual constitution
+level. In other words if you had 12 constitution and the implant required 14
+constitution, raising your levels with armor or weapons will not work. You have
+to raise your actual level.
+
+Intelligence:
+
+Intelligence gives a bonus to several skills as well as determines how many
+skill points you get at the beginning of the game and per level.
+
+Wisdom:
+
+Wisdom involves how well you are able to resist other's force powers, and how
+well others can succumb to yours. A high wisdom allows you to resist more force
+powers and makes your powers harder to resist.
+
+Charisma:
+
+Charisma stacks with will in regards to force powers. It also gives a bonus to
+persuade.
+
+All attributes in the game are involved in dialogue options or can make things
+easier for you to be able to do. For this reason, it is not wise to have many
+attributes less than 12. Attributes at 12 get a +1 modifier, which means the
+respective area gets one bonus point. If the attribute is set at 8 the modifier
+will be -1.
+
+Now for the stats:
+
+Guardian:
+
+
+Strength:		14
+Dexterity:		14
+Constitution:		14
+Intelligence:		8 
+Wisdom:			14
+Charisma:		14
+
+With an intelligence of 8 you will get a modifier of -1. You won't ever be
+skilled, but you will be well rounded in combat. I would increase Constitution
+up the first two times you can raise an attribute for implant purposes. Then
+alternate between strength and wisdom for the rest of the game.
+
+Sentinel:
+
+Strength:		14
+Dexterity:		10
+Constitution:		12
+Intelligence:		16
+Wisdom:			12
+Charisma:		12
+
+The reason why we are taking such a high intelligence is because of the skill
+points per level criteria. With 16 intelligence early in the game it won't be
+necessary to upgrade the intelligence attribute any further. That allows you
+to focus on the other attributes. Yes you will be somewhat weaker than the
+guardian at the beginning of the game but as the game progresses you can still
+become ferocious with a lightsaber.
+
+I would focus on upgrading dexterity the first two times you get to leve up an
+attribute. Then if you want implants you can put the rest into constitution.
+Or you can alternate between wisdom and strength.
+
+Consular:
+
+Strength:		12
+Dexterity:		10
+Constitution:		15
+Intelligence:		10
+Wisdom:			16
+Charisma:		12
+
+The Consular is primarily a force user. In choosing this clas you probably 
+want to focus more on force powers than skilling and combat. As the class that
+has the least vitality you will need a good start in constitution. Put one 
+point in constitution for implant purposes then wisdom the rest of the way.
+
+D.  Skills
+
+All skills are used to create items on a workbench and all skills are involved
+in dialogue options.
+
+Computer Use: Allows you to hack into a computer and reprogram it in various
+ways using computer spikes. The higher the skill the less parts you use. You
+can also program droids this way.
+
+Demolitions: (stop taking at 20 ranks) Demolitions lets you disable/recover
+mines in the game. The higher the skill the greater chance you will be able to
+recover or disable a mine. Recovering is harder than disableing.
+
+Stealth: Stealth is used to sneak around unseen for a while. I wouldn't use it
+to avoid combat. I would use it to sneak attack or for the workbench.
+
+Awareness: (stop taking at 15 ranks) Lets you spot mines. The higher your
+awareness the better you are at spotting mines.
+
+Persuade: Allows you to get others to do what you want them to do. Give them 
+your side of the argument.
+
+Repair: Allows you to repair droids or computers to get them working again 
+using repair parts. The higher your skill the less parts you will need.
+
+Security: (stop taking at 20 ranks) Allows you to open doors and locks that are
+locked. The higher your security skill is the better chance you have at opening
+secure doors or locks.
+
+Treat Injury: Gives you more vitality when you heal using medpacks.
+
+I have in parenthesis (stop taking at x ranks) because that will be all you 
+need to perform any skill check in the game. If you see a higher level item 
+that you want then obviously keep upgrading the skill or have another party
+member keep up with it. The security skill will probably be the only skill 
+where you will fail towards the very end of the game, and the rank it looks for
+is a total rank of 55. Not worth the skill points you could use at other areas.
+
+Guardian:
+
+Computer Use:		0
+Demolitions:		1
+Stealth:		0
+Awareness:		1
+Persuade:		1
+Repair:			0
+Security:		0
+Treat Injury:		1
+
+All of the class skills the Guardian has are needed at the beginning of the
+game. I'd focus on demolitions and awareness the first two times leveling up.
+Then keep all the class skills about the same level as each other with persuade
+and treat injury taking priority.
+
+Sentinel:
+
+Computer Use:		4
+Demolitions:		1
+Stealth:		0
+Awareness:		4
+Persuade:		4
+Repair:			1
+Security:		4
+Treat Injury:		4
+
+With the Sentinel if you get the repair class skill and demolitions class skill
+you will have enough points to level up half of your skills. Give a few points
+to demolitions the first time you level up so you can recover mines (recovering
+is more xp than disarming.) Beyond that focus on keeping your skills *about*
+the same level as each other. Your highest priorities are persuade, treat
+injury, security, and demolitions in that order. Your lowest priority should be
+stealth and (after you reach about 15 ranks) awareness because you'll be able
+to spot any mine no matter how deadly.
+
+Consular:
+
+Computer Use:		0
+Demolitions:		1
+Stealth:		0
+Awareness:		2
+Persuade:		2
+Repair:			0
+Security:		0
+Treat Injury:		2
+
+The reason why we put a point in demolitions instead of other areas is because
+we will need to disable plenty of mines in the first part of the game. After
+all, you don't want to blow yourself up right?
+
+With regard to skills once you hit a workbench it tells you exactly what skills
+you need to create the item in question. Check out the stats of each item and
+ask yourself if it is something you would want to use. If so, keep upgrading
+that particular skill. If you do not see an item you want then you can stop
+investing in that skill.
+
+E.  Feats
+
+Below is a list of feats and the grade I give for them.
+
+Two Weapon Fighting - Master Two Weapon Fighting - A+
+
+Reducing any attack penalty is always a good thing. Why fight with only one
+weapon when you can have two? Or why be penalized for wielding a double bladed
+weapon?
+
+Armor Proficiency Light-Heavy B
+
+Unlike Kotor I there IS armor you can wear that does not restrict force powers.
+Most of that armor though isn't heavy or medium armor so upgrading this feat
+is not necessary.
+
+Caution - Master Caution C
+
+Demolitions and stealth are needed, but you can just upgrade both skills more
+times than selecting those feats. I'd skip it.
+
+Critical Strike - Master Critical Strike A-
+
+I don't use this one very much because it lowers your defense by 5. Still, the
+stunning bonus of this feat can be useful.
+
+Empathy - Master Empathy A
+
+Persuade, awareness, and treat injury are all needed. I'd only take this if you
+don't get many skill points per level.
+
+Flurry - Master Flurry A+
+
+I consider this the best melee attack in the game. You gain an extra attack
+during the round with no penalty at the master level. When this feat is stacked
+with the extra attacks master speed gives you then you become an unstoppable
+killing machine.
+
+Gear Head - Master Gear Head - C
+
+Repair and computer use are not on the high priorty list of skills to upgrade.
+Security is a good skill to upgrade, but there's not much point in using this
+feat.
+
+Conditioning - Master Conditioning - A+
+
+Gives you a bonus to saving throws meaning enemies have a harder time hitting
+you with critical hits.
+
+Power Attack - Master Power Attack - A
+
+The only drawback is the -3 to hit penalty. I would take this only after taking
+flurry.
+
+Power Blast - Master Power Blast - A
+
+Use this feat for ranged party members only. Power blast is the ranged 
+equivalent of power attack.
+
+Rapid Shot - Master Rapid Shot - A+
+
+Use this feat for ranged party members only. Rapid shot is the ranged 
+equivalent of flurry
+
+Sniper Shot - Master Sniper Shot - A
+
+Use this feat for ranged party members only. Sniper shot is the ranged
+equivalent of critical strike.
+
+Weapon Proficiency Blaster Pistol - Weapon Specialization Blaster Pistol - A
+
+Use this feat only for ranged party members who weild regular blasters.
+
+Weapon Proficiency Blaster Rifle - Weapon Specialization Blaster Rifle - A
+
+Use this feat only for ranged party members who wield blaster rifles
+
+Weapon Proficiency Lightsaber - Weapon Specialization Lightsaber - A+
+
+This feat gives a small damage bonus for lightsabers. Every little bit helps.
+
+Weapon Proficiency Melee - Weapon Specialization Melee - F
+
+No one needs this feat, except perhaps Hanharr but I don't ever use him in
+combat.
+
+Jedi Defense - Master Jedi Defense - A+
+
+Gives you a bonus to all deflection rolls. Every little bit helps.
+
+Toughness - Master Toughness - A+
+
+An extra vitality point plus damage reduction? Sweet!
+
+Force Jump - Master Force Jump (Jedi Guardin only)
+
+You get these feats for free. It allows you to jump from a distance to attack
+an enemy.
+
+Force Immunity: Fear - Force Immunity: Paralysis (Jedi Sentinel Only)
+
+This feat prevents you from being stunned, paralyzed, and negates the force
+powers fear, horror, and insanity when used against you.
+
+Force Focus - Master Force Focus (Jedi Consular Only)
+
+This feat makes it harder for an enemy to resist force powers.
+
+Dueling - A
+
+Two weapons are better than one. For the exile I would suggest you skip it.
+There are party members who will benefit from this feat though.
+
+Close Combat - A+
+
+Use for ranged party members only it gives a bonus when the target is short
+range. Very handy.
+
+Regenerate Force Points - C
+
+You regenerate them out of combat anyway with exception of a small amount of
+time for light players.
+
+Class Skill (Any skill your character that is cross class) - A+
+
+You get to be able to raise the skill in question more easily since it will now
+be a class skill.
+
+Duel Strike - Master Duel Strike - A+
+
+Gives you a bonus to hit if another party member is attacking the target.
+
+Finesse Lightsaber - A
+
+Chance to hit is determined by the highest of either dexterity or strength.
+Without this feat it would be determined by strength.
+
+Finesse Melee Weapons - F
+
+Unnecessary. No one will need this.
+
+Regenerate Vitality Points - F
+
+Unnecessary. You regenerate out of combat anyway.
+
+Stealth Run - A
+
+I'd only take this one if you're actually using the stealth skill to sneak
+around. Otherwise it's pointless.
+
+Precise Shot I - Precise Shot V - A+
+
+Use for ranged party members only. Adds a bonus to the damage done to an
+opponent and applies a penalty to the opponent if the opponent makes any
+attempt to deflect the bolt other than grenades or lightsabers.
+
+Jedi Sense
+
+Another feat you get for free.
+
+Guardians:
+
+I would start the game off with Empathy since all three of those skills are
+important.
+
+Sentinals:
+
+Your first feat should be class skill demolitions so that you can put more
+points into it the next time you level up. Choose class skill repair the 
+second time you are able to select a feat. In this way you can easily and
+slowly build up your skills.
+
+Consulars:
+
+I would go with class skill demolitions as your first feat so that you can at
+least be able to disable mines in the game. After that toughness is a good
+option since Consulars get the least amount of vitality per level.
+
+F.  Powers
+
+You don't get powers when you create your character, but you will when you
+first level up.
+
+Heal - Master Heal A
+
+Handy to have for light players you can heal you and your party members up if
+you get low on health during a fight.
+
+Force Aura - Force Armor B
+
+Lasting only 20 seconds is not very sufficient for long fights. Every little
+bit helps though.
+
+Burst of speed - Master Speed A+
+
+2 attacks per round are gained at the master level and your defense is
+increased. A very handy power to have. In fact I consider this a must have for
+any Jedi light or dark.
+
+Force Valor - Master Valor A
+
+Increases attributes, immunity to poison, and affects all party members. Good
+for light side players to have.
+
+Force resistance - Force immunity A
+
+You are better protected from an enemy's force powers. You will need this.
+
+Energy resistance - Master energy resistance A+
+
+Like an energy shield, energy resistance takes some energy attack damage away
+from you.
+
+Force barrier - Master Force Barrier A+
+
+All melee attacks are reduced by a certain number of points.
+
+Battle Meditation - Master Battle Meditation A
+
+Gives your party a bonus to will saves, increases regeneration, and a the
+master level gives a penalty to enemies who fail to save against the effect.
+
+Force Body - Master Force Body C
+
+I wouldn't want to use my own health to fuel force powers. I'm sure in some
+areas in the game it may be useful but what if an enemy knocks down your health
+while using this power? Possible danger to be knocked out. Skip it.
+
+Revitalize - Master Revitalize A+
+
+The master level revives all party members. I'd take it just in case light
+players.
+
+Affect Mind - Dominate Mind Universal A
+
+Using the force to persuade others when persuade could fail...or to manipulate
+others into doing what you want.
+
+Force deflection - Force redirection Universal B-
+
+The keyword in this power is "without a lightsaber." You will get a lightsaber
+later, making this feat unnecessary.
+
+stun - Stasis Field A+
+
+The stasis field level freezes all enemies around you unless they save giving
+you time to kill em all!
+
+Stun droid - destroy droid A
+
+There are a lot of droids. You will need this light players
+
+Choke - Kill B
+
+You can only have one target at a time and if the target saves it doesn't do
+much damage. I'd only take it when all the other dark powers are taken.
+
+Slow - Plague A+
+
+The plague level makes it impossible to save against its effects, lowers target
+attributes, and poisons the target.
+
+Fear - Insanity A+
+
+The insanity level has all targets around you cowering in fear giving you time
+to kill em all!
+
+Shock - Force Storm A+
+
+Force storm level attacks all enemies around you and is a very formidable dark
+power.
+
+Force push - Force Wave A+
+
+At the force wave level you can use this when surrounded by enemies to push
+them back and, if they don't save, stun them.
+
+Drain Life - Death Field A
+
+The death field level allows you to take the life of all targets near you and
+heal yourself up in the process. It's quite powerful, but I'd only use it if
+you were low on health. Other powers do more damage.
+
+Force Suppression - Force Breach A
+
+Both powers cancel out certain force powers active on a target. Quite handy to
+have against other Dark Jedi.
+
+Throw Lightsaber - Advanced Throw Lightsaber F F F F F F
+
+No. Just no. Throw your lightsaber at an enemy leaving you defenseless? No.
+Skip it.
+
+Drain Force - Improved Drain Force A
+
+When the Force gets low whatcha gonna do? Drain Force from those around you!
+
+Force Scream - Master Force Scream C
+
+The damage isn't much but if the enemy doesn't save it gets attribute damage.
+Plauge has a more deadly effect.
+
+Mind Trick - Force Confusion B
+
+Not really necessary as it only targets one enemy at a time. Fighting for you
+sounds cool but you can kill the targets faster with other force powers. Take
+it only if you are running out of force powers to get.
+
+G.  Name
+
+Pick a name. Either choose a random one or make one up yourself. I like my 
+females to be named Amber Naver (because it rhymes and what Naver is spelled
+backwards.) I haven't thought of a good male name yet.
+
+H.  Play
+
+Now it's time to play the game!
+
+III.  Prologue
+
+A.  General Information
+
+The prologue is similar to the Endar Spire section of Kotor I. You control T3,
+a lone astromech droid and the prologue shows you some of the basics of playing
+the game. You can choose to skip the prologue to go right to your Exile or you
+can complete it.
+
+A better option for the prologue however is to partially complete it then skip
+it before it is completed. Why? Items in the general inventory when the 
+prologue is skipped are automatically transferred over to the exile. If you end
+the prologue normally these items will be lost. It is somewhat beneficial and
+time saving to have a few extra items at the beginning of the game.
+
+B.  Ebon Hawk Interior
+
+The goal of the prologue is to fix the Ebon Hawk, heal the Exile so you won't
+die, and land the ship on station orbiting Peragus II. Pretty simple. From the
+cockpit, move south then east into the security room. Open the container, get
+the computer spike and use the console. Slice the system to open the door. Go
+south into the main hold.
+
+The blast doors cannot be opened. Yes there is knocking in one of them. Ignore
+it you can't do anything about it. Search two broken droids for parts and a
+body for a locker key. Try to open the footlocker and you can't, your security
+isn't high enough. Bash it open to get a broken item and computer spikes.
+
+Open the low security door at the south part of the room and the next low
+security door down the hall and to the right. You should be in the medical
+room. Open the storage bin and select your character. Use the medpack on your
+character.
+
+Go back out and all the way south. The engine room upon selecting it cannot be
+opened. The game suggests going outside to find mines. We'll get there in a 
+moment.
+
+Go north and follow the side hallway west to another low security door. Open
+the locker and talk to 3C-FD. Repair him and he will join your party (unless
+you want to skip the prologue midway then don't repair him.) Open the combat
+training box to get a field survival pistol. Equip it and attack the droids
+that come out. Finally, search the unlocked cylinder to get a security spike. 
+Use the security spike to open the high security cylinder.
+
+Go back to the main hallway where the medical room entrance was. Use the lift
+controls directly across the medbay to go outside the Ebon Hawk.
+
+C.  Ebon Hawk Exterior
+
+Take parts from the open hatches and the engine port. Use one part on the 
+exposed wires to open the starboard dormitory. Go to the other side of the Ebon
+Hawk. Recover the frag mines and take another mine from the proton missile. Go
+back inside.
+
+D.  To Peragus II!
+
+If you want to skip the prologue midway so the exile can have items now is the
+time to do it. Go to the Peragus II section of the guide. Otherwise read on.
+
+Go back to the engine room door and use the mine on the engine room door.
+Repair the hyperdrive. Everything that needs to be done has been done, but
+there are a couple of things you can do as an option. Go back to the main hold
+and enter SOLO mode (black button.) Have T3 go to the side hallway where the
+inner garage door is. Use 3C-FD to slice the security console. Select access
+security doors. Close the outer door and open the inner door. T3 now has access
+to a workbench. You can use the workbench to create a repair kit so T3 can heal
+up. Go to the other side and into the dormatory. You will find two footlockers,
+one with parts and another with a droid flamethrower. Send T3 to the outer
+garage door.
+
+Switch back to 3C-FD. Close the inner door then open the outer one. Get out of
+SOLO mode. Go back to the cockpit and use the galaxy map to travel to Peragus
+II. The ship manages to dock onto a station.
+
+Uh oh...what's this? Someone or something else is alive on the Ebon Hawk? Hm,
+doesn't that other droid look familliar...?
+
+IV.  Peragus II.
+
+A.  Background
+
+Peragus II is both a planet and an asteroid field. Fuel from Peragus explodes
+at high temperatures. An accident during a mining operation caused part of the
+planet to blow a chunk off of itself and created an asteroid field. Now miners
+mine from the asteroids instead of the planet surface.
+
+Enemies you fight here are droids, droids, and more droids.
+
+B.  Quests
+
+1.  Main Quests
+
+Recover Ebon Hawk
+Rescue T3-M4
+Voiceprint Protocol
+
+2.  Side Quests
+
+Recent History
+Medical Bay Murders
+Galactic History
+
+C.  Awaken!
+
+Yes, you hear a random person telling you to wake up! It's time to start
+playing the game with the exile.
+
+Go forward and through the door. Open the second door you come to and raid the
+medical bay container. Use security to open medical storage. If you don't have
+security you can use the computer terminal near that door to open it. Raid the
+supplies inside the room.
+
+Now select the computer terminal. Access the medical logs and listen to all of
+them. Once you've listened to all of them access patient lifesigns then patient
+treatment. Using your treat injury skill check the last treatment request. Then
+if you have computer spikes attempt to track the treatment request. If not just
+remember to come back to this computer later and use a spike when you get one.
+Finally access medical bay functions. Unlock door to the morgue and if you
+couldn't open the security door earlier you can do so now.
+
+Go into the morgue and search the corpse with the blanket on it to obtain a
+plasma torch. After you get it...EEEK the old woman rises!
+
+Alright this is going to be the start of dialogue trees where I give a short
+statement of what the person says then what you should say. Sometimes there are
+multiple ways to go with this but overall I'm going to point you in a certain
+direction. I will use the first letter of the party member's name and an E for
+Exile to indicate how you should respond. No other party member has a name that
+starts with E so there will not be any confusion. Multiple responses that can
+be taken will not always be shown because it is not necessary to include
+everything. I will however show the important multiple response options. I will
+also show LSP, DSP, and INF options. So it will be something like this:
+
+X	Party member dialogue
+
+E	DSP +INF Response option 1 dialogue
+	LSP -INF Response option 2 dialogue
+	Response option 3 dialogue
+
+X	Party member dialogue
+
+E	response dialogue
+
+X	Party member dialogue
+
+And so on and so forth. Sometimes you will see LS or DS next to the party 
+member letter and your letter. This simply means the last option you picked
+follows a specific path that is different than another option and that both
+paths will lead to the same place. Example:
+
+X	Party member dailogue
+
+E	LSP Response option 1
+	DSP Response option 2
+
+X LS	Response to light side dialogue
+
+E LS	Continued response to light side dialogue
+
+X LS	Further response to light side dialogue
+
+E LS	Continued response to light side dialogue
+
+X DS	Response to dark side dialogue
+
+E DS	Continued response to dark side dialogue
+
+X	Both light and dark dialogues lead up to this dialogue
+
+This will also be true for any time you fail an INF check with a party member
+or fail at a certian skill dialogue (such as persuade.) I will use INS for 
+Influence Success. When it's a skill I will use the first letter of the skill
+along with S for success (for example: PS.) If you have followed my advice and
+picked a Sentinal you will rarely fail a skill check.
+
+It is very important to save your game before talking to anyone so that if for
+some reason you mess up (and you shouldn't if you're following my guide) you
+can reload from an earlier point instead of way back.
+
+=======
+ Kreia
+=======
+
+K	Find what you're looking for amongst the dead?
+
+E	I thought you were dead
+
+K	Close to death yes, closer than I'd like...
+
+E	A little disoriented...was it your voice...
+
+K	Yes I had hoped as much...
+
+E	So you can touch minds...and faeign death...
+
+K	I am Kreia, and I am your rescuer - as you are...
+
+E	Last thing I remember, I was on board a Republic ship...
+
+K	Your ship was attacked. You were the only survivor...
+
+E	If you think I'm a Jedi, you're mistaken.
+
+K	Your stance, you walk tells me you are a Jedi...
+
+E	The Jedi Order and I have a...troubled history.
+
+K	So it would seem. Keep your past and let us...
+
+E	What is this place?
+
+K	I do not know. I was removed from the events of the...
+
+E	Why do we need to leave?
+
+K	We were attacked once and I fear our attackers will...
+
+E	[Awareness] you seem nervous, worried. Is something wrong?
+
+K	Even as I slept, I felt much unrest here - I saw...
+
+E	We'll see. There's got to be someone left alive...
+
+K	You may wish to extend your search for some clothes...
+
+E	[Persuade] The patients in the med bay were killed...
+	[Persuade/Intimidate] The miners in the med bay were...
+
+K	[Success] I do not know - why did they spare you?
+
+E	They didn't. I got the same dose, but survived.
+
+K	Indeed a Jedi trance could protect one from...
+
+E	You seem to know a lot about Jedi techniques.
+
+K	And so do you. Perhaps we could...
+
+E	LSP I'll return to make sure you're all right.
+	DSP Just stay out of my way, or you'll end up...
+
+The first dialogue you get with another person is also the first opprotunity to
+gain LSP or DSP. Choose what type of character you want to be before choosing
+one and stick with it. Light Side Mastery and Dark Side Mastery come with good
+rewards. I will refer to players as light players or dark players from now on.
+
+Go to the equip screen and equip your plasma torch. Use it to bash down the
+damaged door to the south. Search the corpse for a vibroblade and replace that
+with your plasma torch. Also search the broken droid for loot.
+
+Open the door to the southeast. Kill the droids loot any remains and go through
+the next door. Kill these droids here too, loot remains, and onward through to
+the next door.
+
+No hostile droids in this room. Search the broken droid for loot and try to
+open the emergency hatch. Kreia chimes in through your mind and says in her
+visions the door was opened. You can't open the hatch now, so keep pressing on.
+
+The next room is the security room. Search the corpse and locker for goodies.
+Now use the security desk and check security records. Listen to all of them.
+
+Once that's done open the north door and go through. Kreia chimes in and you
+get your first force power precognition. Go onward through the door and kill
+the droids. At some point in this room you will be able to level up. Kreia
+talks to you again explaining that you can feel the force again. You can now
+get force powers every time you level.
+
+===============================================================================
+Note:  Some force powers draw on the light side, dark side, or neither.  A 
+light side character can use a dark side power, but it costs more force 
+points. Force points are shown to the right of your health.  They regenerate 
+slowly during combat and quickly after combat.
+===============================================================================
+
+For dark players, shock is a good starting force power as it can damage droids.
+Light players can pick stun droid. Or another good idea for any player is to
+pick energy resistance to shrug off some of the damage the droid blasters will
+do to you.
+
+After you level up open up the footlockers and go through the east doors. You
+will emerge at the administration area. Go out and attack the droid to the
+south. Go north and kill the droids in this U shaped area. South and to the
+east for another droid and the Emergency Blast Door. You can't get through it
+so go up the ramp near the door and kill the two droids. Go back to the middle
+of the room and go south into the triangle shaped area. Kill the remaining
+droids and loot the supplies. Go back to the U shaped area and enter the door
+to the west. It should be clear of the force field because you killed all the
+droids on the administration level.
+
+Kreia chimes in and says someone yet lives beyond that door. She cautions you
+to be careful because his thoughts are difficult to read. Enter.
