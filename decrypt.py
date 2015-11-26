@@ -208,11 +208,11 @@ def initialize_cipher_mapping(alphabet):
 def intersect_mapping(old_mapping, heuristic_word_dict, word_pattern, ciphered_word):
     current_mapping = initialize_cipher_mapping(analysisKey)
     candidates = []
-    print("old mapping: " + str(old_mapping))
+    #print("old mapping: " + str(old_mapping))
     try:
         candidates = heuristic_word_dict[word_pattern]
     except KeyError:
-        print("error occured")
+        #print("error occured")
         return old_mapping
     
     for cipher_letter in ciphered_word:
@@ -225,34 +225,34 @@ def intersect_mapping(old_mapping, heuristic_word_dict, word_pattern, ciphered_w
                     #print("potential letter to add: " + potential_letter + " word: " + candidate)
                     current_mapping[cipher_letter].append(potential_letter)
     
-    print("analyzed ciphered letters: " + str(current_mapping))
+    #print("analyzed ciphered letters: " + str(current_mapping))
     
     is_first = True
     for key,value in old_mapping.iteritems():
         if len(value) > 0:
-            print("this isn't the first round: " + str(value))
+            #print("this isn't the first round: " + str(value))
             is_first = False
             break;
     
     if is_first:
-        print("return the current mapping: " + str(current_mapping) + " because its the first time")
+        #print("return the current mapping: " + str(current_mapping) + " because its the first time")
         return current_mapping
     
     #intersect both mappings
-    print("intersecting mappings")
+    #print("intersecting mappings")
     temp_mapping = initialize_cipher_mapping(analysisKey)
     for key, value in old_mapping.iteritems():
         cur_val = current_mapping[key]
-        print("length of value: " + str(len(value)))
+        #print("length of value: " + str(len(value)))
         if len(value) == 0:
-            print("key: " + str(key) + " | current value: " + str(cur_val))
+            #print("key: " + str(key) + " | current value: " + str(cur_val))
             temp_mapping[key] = cur_val
-            print(temp_mapping[key])
+            #print(temp_mapping[key])
         else:
-            print("key: " + str(key) + " | value: " + str(value))
-            print("current mapping: " + str(current_mapping[key]))
+            #print("key: " + str(key) + " | value: " + str(value))
+            #print("current mapping: " + str(current_mapping[key]))
             temp_mapping[key] = intersect(value, current_mapping[key])
-            print("temp mapping: " + str(temp_mapping[key]))
+            #print("temp mapping: " + str(temp_mapping[key]))
     return temp_mapping
 
 ####
@@ -300,17 +300,203 @@ cipher_mapping = initialize_cipher_mapping(analysisKey)
 count = 0
 
 for word in words:
-    print("current word: " + word)
+    #print("current word: " + word)
     if not word in ignore_list:
         word_pattern = get_pattern(word)
-        print("word : " + word + " | pattern: " + word_pattern)
-        print("count: " + str(count))
+        #print("word : " + word + " | pattern: " + word_pattern)
+        #print("count: " + str(count))
         cipher_mapping = intersect_mapping(cipher_mapping, heuristic_word_dict, word_pattern, word)
-        print("latest ciphers: " + str(cipher_mapping))
+        #print("latest ciphers: " + str(cipher_mapping))
     count += 1
 
 deciphered_text = ""
 
+
+def intersect(b1,b2):
+    return list(set(b1).difference(b2))
+
+pp = pprint.PrettyPrinter()
+pp.pprint(cipher_mapping)
+
+solvedCiphers = []
+
+for key,value in cipher_mapping.iteritems():
+    if len(value) == 1:
+        solvedCiphers.append(key)
+
+unsolvedCiphers = []
+
+for key,value in cipher_mapping.iteritems():
+    if(len(value)>1):
+        unsolvedCiphers.append(key)
+
+#sort unsolvedCiphers
+print(unsolvedCiphers)
+print("")
+def reversedBubbleSort(cipherDict, unsolvedCiphers):
+    for passnum in range(len(unsolvedCiphers)-1,0,-1):
+        for i in range(passnum):
+            currentUnsolvedCipherList = cipherDict[unsolvedCiphers[i]]
+            currentUnsolvedCipherListNext = cipherDict[unsolvedCiphers[i+1]]
+            if len(currentUnsolvedCipherList)<len(currentUnsolvedCipherListNext):
+                temp = unsolvedCiphers[i]
+                unsolvedCiphers[i] = unsolvedCiphers[i+1]
+                unsolvedCiphers[i+1] = temp
+
+reversedBubbleSort(cipher_mapping,unsolvedCiphers)
+
+print(unsolvedCiphers)
+
+
+run = 0
+maxRuns = 20
+
+while len(unsolvedCiphers) != 0:
+    if run >= maxRuns:
+        break
+    
+    run += 1
+
+    print("solved: " + str(solvedCiphers))
+    cipher = unsolvedCiphers.pop()
+
+    unresolved = cipher_mapping[cipher]
+    print("unresolved ciphers for " + cipher + " :::" + str(unresolved))
+    
+    k = intersect(unresolved,solvedCiphers)
+    
+    print("intersection: " + str(k))
+    if len(k) == 1:
+        cipher_mapping[cipher] = k
+        solvedCiphers.append(cipher)
+    else:
+        unsolvedCiphers.insert(0,cipher);
+
+
+
+print("")
+pp.pprint(cipher_mapping)
+
+#pp.pprint(heuristic)
+
+
+
+
+
+# fuer jedes wort, ersetze entsprechenden buchstaben mit buchstaben aus dem key (wenn verfuegbar)
+#   ueberpruefe mit einer heuristischer wortliste, welches wort die geringster fehlerquote hat
+#       ueberpruefe ob es ein wort gibt und welches die geringste fehlerquote hat (min. weniger als x) -> return true/false
+#       wenn true:
+#           ueberpruefe ob mapped cipher solved is, if not set it
+#   baue neuen key aus dem gewonnenen wort
+#
+#   gegebenfalls: zaehle haeufigkeiten des auftretens der buchstaben -> uebernehme den buchstaben mit der haechsten wahrscheinlichkeit
+
+mostly_used_words_dict = getWordDictionary("words_english.txt")
+
+def getNewWord(key,word):
+    newWord = ""
+    for letter in word:
+        if len(key[letter]) > 0:
+            newWord = newWord + key[letter][0]
+        else:
+            newWord = newWord + letter
+    #print("old word: " + word)
+    #print("new word: " + newWord)
+    return newWord
+
+def getWordWithLowestErrorRate(word, possibleWords):
+    bestMatch = ""
+    oldMatchRate = 0
+    matches = 0
+    for currentWord in possibleWords:
+        for x in xrange(len(word)):
+            if word[x] == currentWord[x]:
+                matches += 1
+        matchRate = float(matches) / float(len(word))
+        if matchRate > oldMatchRate:
+            oldMatchRate = matchRate
+            bestMatch = currentWord
+        matches = 0
+#    print(possibleWords)
+#    print(oldMatchRate)
+    return bestMatch
+
+def keyContainsLetter(cipher_mapping,letter):
+    keys = cipher_mapping.keys()
+    for x in xrange(len(keys)):
+        value = cipher_mapping[keys[x]]
+        if len(value) == 1:
+            print(str(value[0]) + " - " + letter)
+            if value[0] == letter:
+                return letter
+    return None
+
+def replaceLetter(cipher_mapping,heuristicWord,word):
+    print "start replacing.."
+    for x in xrange(len(word)):
+        
+        letter = word[x]
+        values = cipher_mapping[letter]
+        
+        if len(values) == 1:
+            continue
+    
+        containsLetter = False
+        for key,value in cipher_mapping.iteritems():
+            if len(value) == 1:
+                print(heuristicWord[x])
+                if value[0] == heuristicWord[x]:
+                    containsLetter = True
+                    break
+        if not containsLetter:
+            cipher_mapping[letter] = []
+            cipher_mapping[letter].append(heuristicWord[x])
+
+
+def keyIsComplete(cipher_mapping):
+    keys = cipher_mapping.keys()
+    
+    for x in xrange(len(keys)):
+        value = cipher_mapping[keys[x]]
+        isNotComplete = (len(value) > 1) or (len(value) == 0 )
+        if isNotComplete:
+            return False
+    return True
+
+
+dict = {}
+for letter in alphabet:
+    dict[letter] = ""
+
+pp.pprint(cipher_mapping)
+
+for word in words:
+    if word in ignore_list:
+        continue
+    
+    if keyIsComplete(cipher_mapping):
+        break
+
+    currentNewWord = ""
+
+    try:
+        possible_words = mostly_used_words_dict[get_pattern(word)]
+        newWord = getNewWord(cipher_mapping, word)
+        heuristicWord = getWordWithLowestErrorRate(newWord, possible_words)
+        #print(heuristicWord)
+        replaceLetter(cipher_mapping,heuristicWord,word)
+    except:
+        print("pattern not found")
+
+
+pp.pprint(cipher_mapping)
+
+##########
+#
+#   decipher text with current mapping
+#
+##########
 for letter in cipher_text:
     if not letter in ignore_list:
         if len(cipher_mapping[letter]) > 0:
@@ -322,9 +508,25 @@ for letter in cipher_text:
 
 print(deciphered_text)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 latest_words = splitIntoWordsAndMarks(deciphered_text, ignore_list)
+
 mostly_used_words_dict = getWordDictionary("words_english.txt")
 
+mostly_used_heuristic = {}
 
 deciphered_last_version = ""
 for y in xrange(len(words)):
@@ -341,3 +543,4 @@ for y in xrange(len(words)):
 
 #print(latest_words)
 print(deciphered_last_version)
+'''
