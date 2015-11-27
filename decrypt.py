@@ -14,11 +14,7 @@ def prediction(letterOrder, orderedList, cipher_text):
 
 def is_matching(word, candidate, success_rate):
     correct = 0
-    #print(word)
-    #print(candidate)
     for x in xrange(len(word)):
-        #print("letter word: " + word[x])
-        #print("letter candidate: " + candidate[x])
         if word[x] == candidate[x]:
             correct += 1
     if correct == 0:
@@ -160,9 +156,7 @@ def match_word(keys, word, word_dict):
     return ""
 
 def replace_letter(ciphered_word, keys):
-    #    print("replace letter")
     for k in keys:
-        #   print("key: " + str(k))
         ciphered_word = ciphered_word.replace(k[1][0], k[0])
     return ciphered_word
 
@@ -208,54 +202,42 @@ def initialize_cipher_mapping(alphabet):
 def intersect_mapping(old_mapping, heuristic_word_dict, word_pattern, ciphered_word):
     current_mapping = initialize_cipher_mapping(analysisKey)
     candidates = []
-    #print("old mapping: " + str(old_mapping))
     try:
         candidates = heuristic_word_dict[word_pattern]
     except KeyError:
-        #print("error occured")
         return old_mapping
     
     for cipher_letter in ciphered_word:
         index = ciphered_word.index(cipher_letter)
         for candidate in candidates:
-            #print(candidate)
             potential_letter = candidate[index]
             if not potential_letter in ignore_list:
                 if not potential_letter in current_mapping[cipher_letter]:
-                    #print("potential letter to add: " + potential_letter + " word: " + candidate)
                     current_mapping[cipher_letter].append(potential_letter)
-    
-    #print("analyzed ciphered letters: " + str(current_mapping))
     
     is_first = True
     for key,value in old_mapping.iteritems():
         if len(value) > 0:
-            #print("this isn't the first round: " + str(value))
             is_first = False
             break;
     
     if is_first:
-        #print("return the current mapping: " + str(current_mapping) + " because its the first time")
         return current_mapping
-    
-    #intersect both mappings
-    #print("intersecting mappings")
+
     temp_mapping = initialize_cipher_mapping(analysisKey)
     for key, value in old_mapping.iteritems():
         cur_val = current_mapping[key]
-        #print("length of value: " + str(len(value)))
         if len(value) == 0:
-            #print("key: " + str(key) + " | current value: " + str(cur_val))
             temp_mapping[key] = cur_val
-            #print(temp_mapping[key])
         else:
-            #print("key: " + str(key) + " | value: " + str(value))
-            #print("current mapping: " + str(current_mapping[key]))
             temp_mapping[key] = intersect(value, current_mapping[key])
-            #print("temp mapping: " + str(temp_mapping[key]))
     return temp_mapping
 
-####
+######
+#
+#   BEGINNING OF CODE
+#
+######
 
 #plain_text = open('moby_dick.txt').read().lower()
 plain_text = open('text2.txt').read().lower()
@@ -271,17 +253,15 @@ ignore_list = ['\t','@','{','}','\xb1','[',']','+','$','/','\\','=','|','_','*',
 
 cipher_text = get_text_cipher(text_as_array)
 
+print(cipher_text)
+
 ######
 ##
 ##  AFTER TEXT WAS CIPHERED
 ##
 ######
 
-#cipher_frequency = giveSortedFrequencyList(cipher_text, ignore_list)
-
-#
-# heuristic ordering
-#
+# heuristic ordering for english language
 analysisKey = ["e", "t", "a", "o", "i", "n", "s", "r", "h", "l", "d", "c", "u", "m", "f", "p", "g", "w", "y", "b", "v", "k", "x", "j" , "q", "z" ]
 
 heuristic_word_dict = getWordDictionary("big_dic.txt")
@@ -289,24 +269,15 @@ heuristic_word_dict = getWordDictionary("big_dic.txt")
 with open('heuristic_pattern.dict.json', 'w') as fp:
     json.dump(heuristic_word_dict, fp)
 
-#print(compareTwoTexts(plain_text, text, ignore_list))
-
 words = splitIntoWordsAndMarks(cipher_text, ignore_list)
-
-#print(words)
-
 cipher_mapping = initialize_cipher_mapping(analysisKey)
 
 count = 0
 
 for word in words:
-    #print("current word: " + word)
     if not word in ignore_list:
         word_pattern = get_pattern(word)
-        #print("word : " + word + " | pattern: " + word_pattern)
-        #print("count: " + str(count))
         cipher_mapping = intersect_mapping(cipher_mapping, heuristic_word_dict, word_pattern, word)
-        #print("latest ciphers: " + str(cipher_mapping))
     count += 1
 
 deciphered_text = ""
@@ -372,16 +343,7 @@ while len(unsolvedCiphers) != 0:
     else:
         unsolvedCiphers.insert(0,cipher);
 
-
-
-print("")
 pp.pprint(cipher_mapping)
-
-#pp.pprint(heuristic)
-
-
-
-
 
 # fuer jedes wort, ersetze entsprechenden buchstaben mit buchstaben aus dem key (wenn verfuegbar)
 #   ueberpruefe mit einer heuristischer wortliste, welches wort die geringster fehlerquote hat
@@ -401,8 +363,6 @@ def getNewWord(key,word):
             newWord = newWord + key[letter][0]
         else:
             newWord = newWord + letter
-    #print("old word: " + word)
-    #print("new word: " + newWord)
     return newWord
 
 def getWordWithLowestErrorRate(word, possibleWords):
@@ -418,8 +378,6 @@ def getWordWithLowestErrorRate(word, possibleWords):
             oldMatchRate = matchRate
             bestMatch = currentWord
         matches = 0
-#    print(possibleWords)
-#    print(oldMatchRate)
     return bestMatch
 
 def keyContainsLetter(cipher_mapping,letter):
@@ -427,13 +385,11 @@ def keyContainsLetter(cipher_mapping,letter):
     for x in xrange(len(keys)):
         value = cipher_mapping[keys[x]]
         if len(value) == 1:
-            print(str(value[0]) + " - " + letter)
             if value[0] == letter:
                 return letter
     return None
 
 def replaceLetter(cipher_mapping,heuristicWord,word):
-    print "start replacing.."
     for x in xrange(len(word)):
         
         letter = word[x]
@@ -484,7 +440,6 @@ for word in words:
         possible_words = mostly_used_words_dict[get_pattern(word)]
         newWord = getNewWord(cipher_mapping, word)
         heuristicWord = getWordWithLowestErrorRate(newWord, possible_words)
-        #print(heuristicWord)
         replaceLetter(cipher_mapping,heuristicWord,word)
     except:
         print("pattern not found")
@@ -497,6 +452,7 @@ pp.pprint(cipher_mapping)
 #   decipher text with current mapping
 #
 ##########
+
 for letter in cipher_text:
     if not letter in ignore_list:
         if len(cipher_mapping[letter]) > 0:
@@ -507,40 +463,3 @@ for letter in cipher_text:
         deciphered_text = deciphered_text + letter
 
 print(deciphered_text)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-latest_words = splitIntoWordsAndMarks(deciphered_text, ignore_list)
-
-mostly_used_words_dict = getWordDictionary("words_english.txt")
-
-mostly_used_heuristic = {}
-
-deciphered_last_version = ""
-for y in xrange(len(words)):
-    latest_word = latest_words[y]
-    word = words[y]
-    #print(words[y])
-    #print(latest_word)
-    if not latest_word in ignore_list:
-        pattern = get_pattern(word)
-        if pattern in mostly_used_words_dict:
-            candidates = mostly_used_words_dict[pattern]
-            latest_word = get_closest_word(latest_words[y], candidates)
-    deciphered_last_version = deciphered_last_version + latest_word + " "
-
-#print(latest_words)
-print(deciphered_last_version)
-'''
